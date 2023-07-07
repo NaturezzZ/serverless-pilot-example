@@ -1,0 +1,18 @@
+#image: pytorch/pytorch:1.9.0-cuda10.2-cudnn7-runtime
+image: wangqipeng/wecloud_train:v0.2.0
+job_name: helloworld-fm
+
+setup: |
+  uname -a
+  pip3 install -r requirements.txt
+
+run: |
+  python 
+  -u 
+  train.py 
+
+profile: |
+  python 
+  -u 
+  train.py 
+  --profiling
